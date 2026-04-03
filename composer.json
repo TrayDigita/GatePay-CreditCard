@@ -1,0 +1,53 @@
+{
+    "name": "gatepay/credit-card",
+    "description": "A credit card validator and generator for PHP",
+    "type": "library",
+    "homepage": "https://github.com/TrayDigita/GatePay-CreditCard",
+    "license": "MIT",
+    "prefer-stable": true,
+    "keywords": [
+        "credit card",
+        "validator",
+        "generator",
+        "luhn algorithm",
+        "php"
+    ],
+    "authors": [
+        {
+            "name": "arrayiterator",
+            "email": "arrayiterator@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "slevomat/coding-standard": "^8.28.1",
+        "squizlabs/php_codesniffer": "^4.0.1",
+        "phpunit/phpunit": "^10.5"
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit --config=phpunit.xml.dist",
+        "lint": "./vendor/bin/phpcs --standard=phpcs.xml.dist",
+        "analyse": "./vendor/bin/phpstan --configuration=phpstan.neon"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "GatePay\\CreditCard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GatePay\\CreditCard\\": "src/",
+            "GatePay\\CreditCardTests\\": "tests/"
+        }
+    }
+}

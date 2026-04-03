@@ -1,0 +1,25 @@
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+.wget-hsts
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# log
+*.log
+
+# Specific Directories
+vendor/
+.tmp/
+node_modules/
+
+# Lock
+*.lock
+!composer.lock
+
+# Composer
+composer.phar
