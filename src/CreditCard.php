@@ -241,8 +241,8 @@ final class CreditCard implements Interfaces\CreditCardInterface
     {
         if (empty(self::$cachedFactoryCards)) {
             self::$cachedFactoryCards = [];
-            foreach (self::FACTORY_CARDS as $id => $className) {
-                self::$cachedFactoryCards[$className] = $id;
+            foreach (self::FACTORY_CARDS as $id => $c) {
+                self::$cachedFactoryCards[$c] = $id;
             }
         }
         if (is_object(self::$cachedFactoryCards[$className] ?? null)) {
@@ -252,6 +252,7 @@ final class CreditCard implements Interfaces\CreditCardInterface
             $brand = self::$cachedFactoryCards[$className];
             return $brand;
         }
+
         $instance = new $className();
         $className = get_class($instance);
         if (is_string(self::$cachedFactoryCards[$className] ?? null)) {
